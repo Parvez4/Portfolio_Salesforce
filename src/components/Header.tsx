@@ -1,20 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { navLinks, siteConfig } from "@/data/portfolio";
+import { externalLinks, navLinks, siteConfig } from "@/data/portfolio";
 
 export function Header() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
@@ -24,44 +15,44 @@ export function Header() {
   }, [mobileOpen]);
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "border-b border-slate-800/80 bg-slate-950/90 backdrop-blur-md"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="section-container flex h-16 items-center justify-between sm:h-[4.5rem]">
-        <a
-          href="#"
-          className="text-sm font-semibold tracking-tight text-white sm:text-base"
-        >
+    <header className="sticky top-0 z-50 border-b border-border/80 bg-canvas/90 backdrop-blur-md">
+      <div className="page-wrap flex h-14 items-center justify-between sm:h-16">
+        <a href="#" className="font-serif text-lg tracking-tight text-ink">
           {siteConfig.name.split(" ")[0]}
-          <span className="text-brand-400">.</span>
         </a>
 
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-7 md:flex" aria-label="Primary">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-slate-400 transition-colors hover:text-white"
+              className="text-sm text-ink-muted transition hover:text-sf-blue"
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        <a
-          href="#contact"
-          className="hidden rounded-full bg-brand-500 px-4 py-2 text-sm font-medium text-white transition hover:bg-brand-400 md:inline-flex"
-        >
-          Get in touch
-        </a>
+        <div className="hidden items-center gap-5 md:flex">
+          {externalLinks.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-ink-muted transition hover:text-sf-blue"
+            >
+              {link.label}
+            </a>
+          ))}
+          <a href={`mailto:${siteConfig.email}`} className="btn-primary text-sm">
+            Résumé
+          </a>
+        </div>
 
         <button
           type="button"
-          className="inline-flex rounded-lg p-2 text-slate-300 hover:bg-slate-800 md:hidden"
+          className="rounded-md p-2 text-ink-muted md:hidden"
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           onClick={() => setMobileOpen(!mobileOpen)}
         >
@@ -69,36 +60,48 @@ export function Header() {
         </button>
       </div>
 
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="overflow-hidden border-b border-slate-800 bg-slate-950 md:hidden"
-          >
-            <nav className="section-container flex flex-col gap-1 py-4">
-              {navLinks.map((link) => (
+      {mobileOpen && (
+        <nav
+          className="border-t border-border bg-canvas px-5 py-4 md:hidden"
+          aria-label="Mobile"
+        >
+          <ul className="flex flex-col gap-1">
+            {navLinks.map((link) => (
+              <li key={link.href}>
                 <a
-                  key={link.href}
                   href={link.href}
-                  className="rounded-lg px-3 py-2.5 text-sm text-slate-300 hover:bg-slate-900 hover:text-white"
+                  className="block rounded-md px-2 py-2.5 text-sm text-ink"
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
                 </a>
-              ))}
+              </li>
+            ))}
+            {externalLinks.map((link) => (
+              <li key={link.label}>
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block rounded-md px-2 py-2.5 text-sm text-ink-muted"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+            <li className="mt-2">
               <a
                 href="#contact"
-                className="mt-2 rounded-full bg-brand-500 px-4 py-2.5 text-center text-sm font-medium text-white"
+                className="btn-primary w-full"
                 onClick={() => setMobileOpen(false)}
               >
                 Get in touch
               </a>
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            </li>
+          </ul>
+        </nav>
+      )}
     </header>
   );
 }

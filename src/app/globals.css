@@ -1,24 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
+  --font-mono: ui-monospace, "Cascadia Code", monospace;
 
-  --color-slate-950: #020617;
-  --color-slate-900: #0f172a;
-  --color-slate-800: #1e293b;
-  --color-slate-700: #334155;
-  --color-slate-600: #475569;
-  --color-slate-500: #64748b;
-  --color-slate-400: #94a3b8;
-  --color-slate-300: #cbd5e1;
-  --color-slate-200: #e2e8f0;
-  --color-slate-100: #f1f5f9;
-  --color-slate-50: #f8fafc;
+  --color-canvas: #faf9f7;
+  --color-canvas-muted: #f3f2ef;
+  --color-ink: #181818;
+  --color-ink-muted: #5c5c5c;
+  --color-ink-faint: #8a8a8a;
+  --color-border: #e8e6e1;
+  --color-border-strong: #d4d1c9;
 
-  --color-brand-500: #3b82f6;
-  --color-brand-400: #60a5fa;
-  --color-brand-300: #93c5fd;
+  --color-sf-blue: #0176d3;
+  --color-sf-blue-dark: #032d60;
+  --color-sf-blue-light: #e8f4fd;
+  --color-sf-cloud: #b4d9f8;
+  --color-sf-teal: #06a59a;
 }
 
 html {
@@ -26,37 +25,42 @@ html {
 }
 
 body {
-  @apply bg-slate-950 text-slate-200 antialiased;
+  @apply bg-canvas font-sans text-ink antialiased;
 }
 
 ::selection {
-  @apply bg-brand-500/30 text-white;
+  background-color: color-mix(in srgb, var(--color-sf-blue) 25%, transparent);
+  color: var(--color-sf-blue-dark);
 }
 
-.section-container {
-  @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+.skip-link {
+  @apply sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-sf-blue focus:px-4 focus:py-2 focus:text-white;
 }
 
-.section-heading {
-  @apply text-sm font-semibold uppercase tracking-[0.2em] text-brand-400;
+.page-wrap {
+  @apply mx-auto w-full max-w-[72rem] px-5 sm:px-8 lg:px-10;
+}
+
+.section-label {
+  @apply text-[0.7rem] font-medium uppercase tracking-[0.22em] text-ink-faint;
 }
 
 .section-title {
-  @apply mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl;
+  @apply font-serif text-[clamp(1.75rem,4vw,2.5rem)] font-normal leading-[1.15] tracking-[-0.02em] text-ink;
 }
 
-.glass-card {
-  @apply rounded-2xl border border-slate-800/80 bg-slate-900/50 backdrop-blur-sm;
+.link-arrow {
+  @apply inline-flex items-center gap-1.5 text-sm font-medium text-sf-blue transition hover:gap-2.5;
 }
 
-.gradient-text {
-  @apply bg-gradient-to-r from-white via-slate-200 to-brand-300 bg-clip-text text-transparent;
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-full bg-sf-blue px-5 py-2.5 text-sm font-medium text-white transition hover:bg-sf-blue-dark;
 }
 
-.grid-bg {
-  background-image:
-    linear-gradient(to right, rgb(30 41 59 / 0.35) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(30 41 59 / 0.35) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 20%, transparent 75%);
+.btn-secondary {
+  @apply inline-flex items-center justify-center rounded-full border border-border-strong bg-white px-5 py-2.5 text-sm font-medium text-ink transition hover:border-sf-blue hover:text-sf-blue;
+}
+
+.divider {
+  @apply border-t border-border;
 }

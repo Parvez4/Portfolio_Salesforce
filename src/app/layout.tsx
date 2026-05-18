@@ -1,21 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { DM_Sans, Instrument_Serif } from "next/font/google";
 import { siteConfig } from "@/data/portfolio";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
   subsets: ["latin"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
-  title: `${siteConfig.name} | ${siteConfig.title}`,
-  description: siteConfig.tagline,
+  title: `${siteConfig.name} · ${siteConfig.title}`,
+  description: siteConfig.heroDescription,
   keywords: [
     "Salesforce Developer",
     "Apex",
@@ -26,8 +28,8 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: siteConfig.name }],
   openGraph: {
-    title: `${siteConfig.name} — Salesforce Developer Portfolio`,
-    description: siteConfig.tagline,
+    title: `${siteConfig.name} — Salesforce Developer`,
+    description: siteConfig.heroDescription,
     type: "website",
   },
 };
@@ -40,8 +42,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} font-sans`}
+        className={`${dmSans.variable} ${instrumentSerif.variable} font-sans`}
       >
+        <a href="#main" className="skip-link">
+          Skip to main content
+        </a>
         {children}
       </body>
     </html>

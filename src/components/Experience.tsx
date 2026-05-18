@@ -1,60 +1,33 @@
-"use client";
-
-import { Section } from "@/components/Section";
 import { experience } from "@/data/portfolio";
-import { Briefcase } from "lucide-react";
 
 export function Experience() {
   return (
-    <Section
-      id="experience"
-      label="Experience"
-      title="Professional journey"
-      description="From Salesforce development at Cognizant to AI engineering and campus leadership."
-    >
-      <div className="relative">
-        <div className="absolute left-[11px] top-2 hidden h-[calc(100%-1rem)] w-px bg-gradient-to-b from-brand-500/60 via-slate-700 to-transparent sm:block" />
+    <section id="experience" className="divider bg-canvas-muted py-16 sm:py-24">
+      <div className="page-wrap">
+        <p className="section-label">Experience</p>
+        <h2 className="section-title mt-2">Where I&apos;ve built</h2>
 
-        <div className="space-y-10">
+        <ol className="mt-12 divide-y divide-border border-y border-border">
           {experience.map((job) => (
-            <article
+            <li
               key={`${job.company}-${job.role}`}
-              className="relative sm:pl-12"
+              className="grid gap-4 py-8 sm:grid-cols-[minmax(0,1fr)_auto] sm:gap-8"
             >
-              <div className="absolute left-0 top-1.5 hidden size-6 items-center justify-center rounded-full border border-brand-500/40 bg-slate-950 sm:flex">
-                <Briefcase className="size-3 text-brand-400" />
+              <div>
+                <h3 className="font-serif text-xl text-ink">{job.role}</h3>
+                <p className="mt-1 text-sf-blue">{job.company}</p>
+                <p className="mt-3 text-sm leading-relaxed text-ink-muted">
+                  {job.highlights[0]}
+                </p>
               </div>
-
-              <div className="glass-card p-6 sm:p-7">
-                <div className="flex flex-wrap items-start justify-between gap-3">
-                  <div>
-                    <h3 className="text-lg font-semibold text-white">
-                      {job.role}
-                    </h3>
-                    <p className="mt-1 text-brand-400">{job.company}</p>
-                  </div>
-                  <div className="text-right text-sm text-slate-500">
-                    <p>{job.period}</p>
-                    <p className="mt-0.5">{job.location}</p>
-                  </div>
-                </div>
-
-                <ul className="mt-5 space-y-2.5">
-                  {job.highlights.map((point) => (
-                    <li
-                      key={point}
-                      className="flex gap-2.5 text-sm leading-relaxed text-slate-400"
-                    >
-                      <span className="mt-2 size-1 shrink-0 rounded-full bg-brand-400" />
-                      {point}
-                    </li>
-                  ))}
-                </ul>
+              <div className="text-sm text-ink-faint sm:text-right">
+                <p>{job.period}</p>
+                <p className="mt-0.5">{job.location}</p>
               </div>
-            </article>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
-    </Section>
+    </section>
   );
 }

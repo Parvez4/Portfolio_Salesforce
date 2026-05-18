@@ -1,48 +1,42 @@
-"use client";
-
-import { Section } from "@/components/Section";
-import { summary } from "@/data/portfolio";
-
-const pillars = [
-  {
-    title: "Enterprise CRM",
-    text: "Apex, LWC, Flows, and integrations for thousands of users.",
-  },
-  {
-    title: "AI on Salesforce",
-    text: "Agentforce, RAG, Prompt Builder, and Einstein Trust Layer.",
-  },
-  {
-    title: "DevOps & quality",
-    text: "Salesforce DX, Gearset, Git, and 90%+ test coverage discipline.",
-  },
-];
+import { skillCategories, summary } from "@/data/portfolio";
 
 export function About() {
   return (
-    <Section
-      id="about"
-      label="About"
-      title="Engineering CRM at scale, with AI at the core"
-      description="From Apex and LWC modernization to Agentforce and Data Cloud — I build solutions that are fast, secure, and measurable."
-    >
-      <div className="grid gap-8 lg:grid-cols-5">
-        <p className="col-span-3 text-base leading-relaxed text-slate-300 sm:text-lg">
-          {summary}
-        </p>
-        <div className="col-span-2 flex flex-col gap-4">
-          {pillars.map((item) => (
-            <div key={item.title} className="glass-card p-5">
-              <h3 className="font-medium text-white">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-slate-400">
-                {item.text}
-              </p>
-            </div>
-          ))}
+    <section id="about" className="py-16 sm:py-24">
+      <div className="page-wrap grid gap-12 lg:grid-cols-2 lg:gap-16">
+        <div>
+          <p className="section-label">About</p>
+          <h2 className="section-title mt-2">
+            Salesforce engineering with an AI-forward lens
+          </h2>
+          <div className="mt-6 space-y-4 text-base leading-relaxed text-ink-muted">
+            {summary.split("\n\n").map((paragraph) => (
+              <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <p className="section-label">Capabilities</p>
+          <ul className="mt-4 space-y-8">
+            {skillCategories.map((cat) => (
+              <li key={cat.title}>
+                <h3 className="text-sm font-semibold text-ink">{cat.title}</h3>
+                <ul className="mt-3 flex flex-wrap gap-2">
+                  {cat.skills.map((skill) => (
+                    <li
+                      key={skill}
+                      className="rounded-full border border-border bg-white px-3 py-1 text-xs text-ink-muted"
+                    >
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
-    </Section>
+    </section>
   );
 }
-
-
