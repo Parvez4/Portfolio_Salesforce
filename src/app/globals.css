@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --color-slate-950: #020617;
+  --color-slate-900: #0f172a;
+  --color-slate-800: #1e293b;
+  --color-slate-700: #334155;
+  --color-slate-600: #475569;
+  --color-slate-500: #64748b;
+  --color-slate-400: #94a3b8;
+  --color-slate-300: #cbd5e1;
+  --color-slate-200: #e2e8f0;
+  --color-slate-100: #f1f5f9;
+  --color-slate-50: #f8fafc;
+
+  --color-brand-500: #3b82f6;
+  --color-brand-400: #60a5fa;
+  --color-brand-300: #93c5fd;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-950 text-slate-200 antialiased;
+}
+
+::selection {
+  @apply bg-brand-500/30 text-white;
+}
+
+.section-container {
+  @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+}
+
+.section-heading {
+  @apply text-sm font-semibold uppercase tracking-[0.2em] text-brand-400;
+}
+
+.section-title {
+  @apply mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl;
+}
+
+.glass-card {
+  @apply rounded-2xl border border-slate-800/80 bg-slate-900/50 backdrop-blur-sm;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-white via-slate-200 to-brand-300 bg-clip-text text-transparent;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgb(30 41 59 / 0.35) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(30 41 59 / 0.35) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 20%, transparent 75%);
+}
