@@ -37,3 +37,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# standalone demo repos (optional; install deps locally only)
+repos/**/node_modules
+repos/**/dist

@@ -1,125 +1,136 @@
-import { projects } from "@/data/portfolio";
-import { ArrowRight } from "lucide-react";
+"use client";
 
-function ProjectPreview({
-  accent,
-  title,
-}: {
-  accent: string;
-  title: string;
-}) {
-  const gridId = `grid-${title.replace(/\s/g, "").slice(0, 12)}`;
+import { motion } from "framer-motion";
+import {
+  Bot,
+  Calendar,
+  Database,
+  Sparkles,
+  Star,
+  TrendingUp,
+} from "lucide-react";
+import { Section } from "@/components/Section";
+import { projects, projectsSection } from "@/data/portfolio";
 
-  return (
-    <div
-      className={`relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-gradient-to-br ${accent}`}
-      aria-hidden
-    >
-      <div className="absolute inset-0 opacity-30">
-        <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern
-              id={gridId}
-              width="24"
-              height="24"
-              patternUnits="userSpaceOnUse"
-            >
-              <path
-                d="M 24 0 L 0 0 0 24"
-                fill="none"
-                stroke="white"
-                strokeWidth="0.5"
-              />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill={`url(#${gridId})`} />
-        </svg>
-      </div>
-      <div className="absolute bottom-4 left-4 right-4 rounded-lg border border-white/20 bg-white/10 p-3 backdrop-blur-sm">
-        <div className="flex gap-2">
-          <span className="h-2 w-2 rounded-full bg-white/80" />
-          <span className="h-2 w-16 rounded-full bg-white/50" />
-        </div>
-        <div className="mt-3 space-y-1.5">
-          <span className="block h-2 w-3/4 rounded bg-white/40" />
-          <span className="block h-2 w-1/2 rounded bg-white/25" />
-        </div>
-      </div>
-    </div>
-  );
-}
+const projectIcons = [Sparkles, Bot, Database];
 
 export function Projects() {
   return (
-    <section id="work" className="py-16 sm:py-24">
-      <div className="page-wrap">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <p className="section-label">Selected work</p>
-            <h2 className="section-title mt-2">
-              Salesforce builds with measurable impact
-            </h2>
-          </div>
-          <a href="#contact" className="link-arrow shrink-0">
-            Discuss a project
-            <ArrowRight className="size-4" />
-          </a>
-        </div>
+    <Section
+      id="projects"
+      label="Projects"
+      title={projectsSection.title}
+      description={projectsSection.description}
+      className="border-t border-slate-800/60 bg-slate-900/20"
+    >
+      <div className="grid gap-4 sm:gap-5 lg:grid-cols-12 lg:gap-5">
+        {projects.map((project, index) => {
+          const Icon = projectIcons[index] ?? Sparkles;
+          const accent = project.accent ?? "text-brand-400";
+          const glow = project.glow ?? "from-brand-500/20";
+          const isFeatured = project.featured === true;
 
-        <ul className="mt-12 space-y-16 sm:space-y-20">
-          {projects.map((project, index) => (
-            <li
-              key={project.title}
-              className="grid gap-8 border-t border-border pt-12 first:border-t-0 first:pt-0 lg:grid-cols-2 lg:gap-12"
+          return (
+            <motion.article
+              key={project.id}
+              className={`group relative flex flex-col overflow-hidden rounded-2xl border border-slate-800/80 bg-gradient-to-br from-slate-900/80 to-slate-950/90 transition hover:border-slate-600 ${
+                isFeatured ? "lg:col-span-12" : "lg:col-span-6"
+              }`}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              whileHover={{ y: -3 }}
             >
-              <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-                <ProjectPreview accent={project.accent} title={project.title} />
-              </div>
+              <div
+                className={`pointer-events-none absolute -right-16 -top-16 size-48 rounded-full bg-gradient-to-br ${glow} to-transparent opacity-50 blur-3xl transition group-hover:opacity-80`}
+              />
+              <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-brand-500 via-brand-500/30 to-transparent" />
 
-              <article className={index % 2 === 1 ? "lg:order-1" : ""}>
-                <p className="font-mono text-sm text-sf-blue">
-                  {String(index + 1).padStart(2, "0")}
-                </p>
-                <p className="mt-3 text-sm text-ink-faint">{project.category}</p>
-                <h3 className="mt-2 font-serif text-2xl tracking-tight text-ink sm:text-3xl">
-                  {project.subtitle}
-                </h3>
-                <p className="mt-1 text-lg font-medium text-ink-muted">
-                  {project.title}
-                </p>
-
-                <p className="mt-5 text-base leading-relaxed text-ink-muted">
-                  {project.description}
-                </p>
-
-                {project.metrics.length > 0 && (
-                  <p className="mt-4 text-sm font-medium text-sf-blue">
-                    {project.metrics
-                      .map((m) => `${m.value} ${m.label}`)
-                      .join(" · ")}
-                  </p>
-                )}
-
-                <ul className="mt-5 flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <li
-                      key={tag}
-                      className="rounded-full border border-border bg-canvas-muted px-3 py-1 text-xs text-ink-muted"
+              <div
+                className={`relative flex flex-1 flex-col p-5 sm:p-6 ${
+                  isFeatured ? "lg:flex-row lg:gap-8" : ""
+                }`}
+              >
+                <div
+                  className={`min-w-0 ${isFeatured ? "lg:flex-1" : ""}`}
+                >
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span
+                      className={`inline-flex items-center gap-1.5 rounded-full border border-slate-700/80 bg-slate-950/80 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider ${accent}`}
                     >
-                      {tag}
-                    </li>
-                  ))}
-                </ul>
+                      <Icon className="size-3" />
+                      Agentforce
+                    </span>
+                    {isFeatured && (
+                      <span className="inline-flex items-center gap-1 rounded-full border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-amber-300">
+                        <Star className="size-3 fill-amber-400/80" />
+                        Flagship
+                      </span>
+                    )}
+                    <span className="inline-flex items-center gap-1 text-xs text-slate-500">
+                      <Calendar className="size-3" />
+                      {project.period}
+                    </span>
+                  </div>
 
-                <a href="#contact" className="link-arrow mt-6">
-                  Learn more
-                  <ArrowRight className="size-4" />
-                </a>
-              </article>
-            </li>
-          ))}
-        </ul>
+                  <h3
+                    className={`mt-4 font-semibold leading-snug text-white transition group-hover:text-brand-300 ${
+                      isFeatured ? "text-xl sm:text-2xl" : "text-lg"
+                    }`}
+                  >
+                    {project.title}
+                  </h3>
+
+                  <p
+                    className={`mt-3 leading-relaxed text-slate-400 ${
+                      isFeatured ? "text-sm sm:text-base" : "text-sm"
+                    }`}
+                  >
+                    {project.description}
+                  </p>
+
+                  <ul className="mt-4 flex flex-wrap gap-1.5">
+                    {project.tech.map((t) => (
+                      <li
+                        key={t}
+                        className="rounded-md border border-slate-700/60 bg-slate-950/60 px-2 py-0.5 text-[11px] font-medium text-slate-400"
+                      >
+                        {t}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div
+                  className={`mt-5 flex flex-col gap-2 sm:flex-row sm:flex-wrap lg:mt-0 ${
+                    isFeatured
+                      ? "lg:w-[min(100%,220px)] lg:shrink-0 lg:flex-col"
+                      : ""
+                  }`}
+                >
+                  {project.metrics.map((metric) => (
+                    <div
+                      key={metric.label}
+                      className="flex min-w-[8.5rem] flex-1 flex-col rounded-xl border border-slate-800/70 bg-slate-950/50 px-4 py-3 sm:min-w-[9.5rem]"
+                    >
+                      <span className="inline-flex items-center gap-1 text-[10px] font-medium uppercase tracking-wider text-slate-500">
+                        <TrendingUp className={`size-3 ${accent}`} />
+                        {metric.label}
+                      </span>
+                      <span
+                        className={`mt-1 text-2xl font-semibold tracking-tight ${accent}`}
+                      >
+                        {metric.value}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.article>
+          );
+        })}
       </div>
-    </section>
+    </Section>
   );
 }
