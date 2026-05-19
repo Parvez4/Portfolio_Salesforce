@@ -1,8 +1,8 @@
 # Portfolio — Parvez Shaik
 
-Personal portfolio site for a **Salesforce Developer** role, highlighting enterprise CRM delivery, Agentforce and AI on platform, certifications, and project work. Built with Next.js 15, React 19, TypeScript, Tailwind CSS v4, and Framer Motion.
+**Live site:** [www.parvezshaik.com](https://www.parvezshaik.com)
 
-**Live site:** Deploy to [Vercel](https://vercel.com) (or any Next.js host) and set your custom domain.
+Personal portfolio site for a **Salesforce Developer** role, highlighting enterprise CRM delivery, Agentforce and AI on platform, certifications, and project work. Built with Next.js 15, React 19, TypeScript, Tailwind CSS v4, and Framer Motion.
 
 ---
 
