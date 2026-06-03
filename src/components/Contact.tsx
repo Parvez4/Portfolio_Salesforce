@@ -3,7 +3,7 @@
 import { useState, FormEvent } from "react";
 import { Section } from "@/components/Section";
 import { siteConfig } from "@/data/portfolio";
-import { Linkedin, Mail, MapPin, Phone, Send } from "lucide-react";
+import { Globe, Linkedin, Mail, MapPin, Phone, Send } from "lucide-react";
 
 export function Contact() {
   const [status, setStatus] = useState<"idle" | "sent">("idle");
@@ -43,6 +43,12 @@ export function Contact() {
       label: "LinkedIn",
       href: siteConfig.linkedin,
       value: "parvezshaik44",
+    },
+    {
+      icon: Globe,
+      label: "Website",
+      href: siteConfig.website,
+      value: "parvezshaik.com",
     },
     {
       icon: MapPin,

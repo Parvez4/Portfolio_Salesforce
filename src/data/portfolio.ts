@@ -2,10 +2,11 @@ export const siteConfig = {
   name: "Parvez Shaik",
   title: "Salesforce Developer",
   tagline:
-    "Building enterprise CRM & AI solutions with Apex, LWC, and Agentforce",
+    "Apex, LWC, integrations, and CI/CD for CRM platforms serving 5,000+ users, plus Agentforce and Data Cloud",
   email: "parvezshaik3008@gmail.com",
   phone: "+1 (930) 904-4515",
   location: "Bloomington, Indiana | Open to relocate (U.S.)",
+  website: "https://www.parvezshaik.com",
   linkedin: "https://www.linkedin.com/in/parvezshaik44/",
   github: "https://github.com/Parvez4",
   trailhead: "https://www.salesforce.com/trailblazer/parvez",
@@ -18,42 +19,42 @@ export const siteConfig = {
 export const experienceSection = {
   title: "Professional experience",
   description:
-    "From enterprise Salesforce at Cognizant to Agentforce builds and graduate study at Indiana University.",
+    "Salesforce and Service Cloud delivery at Cognizant, AI engineering at MyEdMaster, and graduate study at Indiana University.",
 };
 
 export const aboutContent = {
   label: "About",
-  title: "Salesforce developer & AI on platform",
-  lead: "Four years delivering enterprise CRM for 50,000+ users, with a growing focus on Agentforce, Data Cloud, and production-ready AI.",
+  title: "Salesforce developer across CRM, Service Cloud & AI",
+  lead: "Three-plus years on CRM platforms for 5,000+ users, with Apex, LWC, release automation, Data Cloud, and Agentforce builds teams can ship with confidence.",
   bioParagraphs: [
-    "At Cognizant I built and optimized Apex, LWC, Flows, and integrations for global teams. I migrated 22 Visualforce pages to Lightning (2.3x faster loads), improved platform speed by 27.8%, and shipped releases with Salesforce DX, Git, and Gearset.",
-    "My recent work centers on Agentforce, Prompt Builder, and the Einstein Trust Layer, including autonomous support at 63.9% auto-resolution and knowledge retrieval at 96% accuracy. I design for secure, measurable outcomes that support and operations teams can trust.",
-    "I am a four-time certified Trailblazer, active on Trailhead, and completing an MS in Computer Science at Indiana University Bloomington (May 2026). I combine platform depth with graduate-level rigor in data and AI.",
+    "I work across Apex, LWC, Flows, Platform Events, REST APIs, release automation, Data Cloud, and Salesforce security. At Cognizant I fixed slow components for 5,000+ users (27.8% speed gain, 19.6% fewer SLA breaches), migrated 22 Visualforce pages to LWC for 2.3x faster loads, and built Service Cloud case solutions with strong test coverage.",
+    "I support CI/CD with Gearset, Git, Jenkins, and Salesforce DX, and I validate Permission Sets, sharing, and field-level security before UAT so Sales Cloud and Service Cloud changes land cleanly. Agentforce work includes Prompt Builder, RAG, and Einstein Trust Layer, including a support agent with a 63.9% auto-resolution rate.",
+    "I am a four-time Salesforce certified Trailblazer, active on Trailhead, and completing an MS in Computer Science at Indiana University Bloomington (May 2026). I bring platform depth together with hands-on integration, data, and AI delivery.",
   ],
   proofPoints: [
-    { label: "Trailblazer", value: "4 Salesforce certifications" },
-    { label: "Enterprise scale", value: "50,000+ CRM users supported" },
-    { label: "Modernization", value: "22 Visualforce pages moved to LWC" },
-    { label: "Graduate study", value: "MS CS at IU Bloomington, 2026" },
+    { label: "Experience", value: "3+ years on Salesforce CRM" },
+    { label: "Scale", value: "5,000+ users on production CRM" },
+    { label: "Modernization", value: "2.3x faster loads after LWC migration" },
+    { label: "Credentials", value: "4 Salesforce certifications" },
   ],
   focusAreas: [
     {
-      title: "Enterprise CRM",
+      title: "CRM & Service Cloud",
       description:
-        "I build the backbone teams run on every day: Apex, LWC, Flows, triggers, and integrations tuned for performance and maintainability. At Cognizant I improved global CRM speed by 27.8%, cut SLA breaches, and replaced brittle Visualforce with Lightning experiences that load 2.3x faster. I think in user journeys, governor limits, and long-term ownership.",
-      highlights: ["Apex & LWC", "Flows & Platform Events", "Large-scale user adoption"],
+        "I build workflows, case automation, and consoles with Apex, LWC, Flows, triggers, and Approval Processes. Recent work includes case triage flows, Service Cloud consoles with SLA routing, and integrations that cut manual case review and overdue follow-up in test scenarios.",
+      highlights: ["Sales & Service Cloud", "Case automation", "Apex & LWC"],
     },
     {
-      title: "AI on Salesforce",
+      title: "Integrations & DevOps",
       description:
-        "I design AI that belongs inside the CRM, not beside it. From Agentforce agents and Prompt Builder to RAG over Data Cloud and Trust Layer controls, I focus on grounded responses, secure handling of sensitive data, and metrics that matter to support leaders. My recent agents have driven strong auto-resolution and faster first responses without sacrificing compliance.",
-      highlights: ["Agentforce & Prompt Builder", "Data Cloud & RAG", "Einstein Trust Layer"],
+        "I connect Salesforce to payment, ERP, and marketing systems with REST APIs, Named Credentials, OAuth, External Services, and Salesforce Connect. I support Salesforce DX, Git, Gearset, Jenkins, and deployment automation to reduce release rework and keep environments stable.",
+      highlights: ["REST & OAuth", "Gearset & Jenkins", "Salesforce DX"],
     },
     {
-      title: "DevOps & quality",
+      title: "AI & platform security",
       description:
-        "Shipping fast only counts if releases stay stable. I use Salesforce DX, Git, Gearset, and CI/CD habits to reduce deployment risk, keep test coverage high (90%+ on critical paths), and make rollbacks rare. I have cut release-related issues and manual ops work by double-digit percentages while keeping teams confident in what goes to production.",
-      highlights: ["Salesforce DX & Gearset", "Git-based releases", "Test-driven delivery"],
+        "I design Agentforce solutions with Prompt Builder, Data Cloud, RAG, and Einstein Trust Layer controls. I also review Permission Sets, sharing rules, and FLS before UAT so AI and CRM changes stay secure and testable.",
+      highlights: ["Agentforce & RAG", "Data Cloud", "Trust Layer & FLS"],
     },
   ],
 };
@@ -65,20 +66,18 @@ export const skillCategories = [
   {
     title: "Certifications",
     skills: [
-      "Agentforce Specialist",
       "Platform Developer I",
-      "Platform Administrator",
+      "Administrator",
       "Platform App Builder",
+      "Agentforce Specialist",
     ],
   },
   {
-    title: "AI & Data Cloud",
+    title: "Salesforce Clouds",
     skills: [
-      "Agentforce",
-      "Prompt Builder",
-      "Einstein Trust Layer",
-      "Generative AI",
-      "RAG",
+      "Sales Cloud",
+      "Service Cloud",
+      "Experience Cloud",
       "Data Cloud",
     ],
   },
@@ -95,6 +94,16 @@ export const skillCategories = [
     ],
   },
   {
+    title: "Automation & Platform",
+    skills: [
+      "Flows",
+      "Platform Events",
+      "Validation Rules",
+      "Process Builder",
+      "Approval Processes",
+    ],
+  },
+  {
     title: "Integrations & APIs",
     skills: [
       "REST APIs",
@@ -103,16 +112,6 @@ export const skillCategories = [
       "OAuth",
       "External Services",
       "Salesforce Connect",
-    ],
-  },
-  {
-    title: "Automation & Platform",
-    skills: [
-      "Flows",
-      "Platform Events",
-      "Validation Rules",
-      "Process Builder",
-      "Approval Processes",
     ],
   },
   {
@@ -137,23 +136,20 @@ export const skillCategories = [
       "Field-Level Security",
     ],
   },
+  {
+    title: "AI & Data Cloud",
+    skills: [
+      "Agentforce",
+      "Prompt Builder",
+      "Einstein Trust Layer",
+      "Generative AI",
+      "RAG",
+      "Data Cloud",
+    ],
+  },
 ];
 
 export const experience = [
-  {
-    role: "Member Services Lead",
-    company: "IU Campus Recreational Sports",
-    period: "Sep 2024 to Present",
-    location: "Bloomington, IN",
-    category: "Leadership",
-    accent: "text-emerald-400",
-    glow: "from-emerald-500/20",
-    highlights: [
-      "Support daily front desk and member service operations for a high-volume campus recreation facility.",
-      "Assist with memberships, facility access, programs, and policy-related questions while maintaining data accuracy.",
-      "Coordinate shift-level team operations and resolve issues in a fast-paced environment.",
-    ],
-  },
   {
     role: "Software Developer Intern",
     company: "MyEdMaster",
@@ -163,10 +159,9 @@ export const experience = [
     accent: "text-violet-400",
     glow: "from-violet-500/20",
     highlights: [
-      "Built a Python-based AI content pipeline using MySQL, Redis, and GraphRAG-style retrieval.",
-      "Integrated AutoGen agents into content review, reducing manual evaluation time by 23%.",
-      "Improved retrieval with LlamaIndex and SpaCy, raising content relevancy from 72% to 83%.",
-      "Deployed Flask backend on AWS EC2 with Docker and Apache; improved model evaluation speed by 18%.",
+      "Built a Python-based AI content pipeline using MySQL, Redis, and GraphRAG; added AutoGen agents to the review flow and cut manual evaluation time by 23%.",
+      "Improved LLM retrieval with LlamaIndex and SpaCy, supporting 2,800+ assessment items and raising content relevancy from 72% to 83%.",
+      "Deployed a Flask backend on AWS EC2 with Docker and Apache; fixed 4 recurring deployment issues and improved model evaluation speed by 18%.",
     ],
   },
   {
@@ -178,10 +173,11 @@ export const experience = [
     accent: "text-brand-400",
     glow: "from-brand-500/25",
     highlights: [
-      "Optimized Apex and LWC for a global CRM, delivering 27.8% speed improvement and 19.6% fewer SLA breaches.",
-      "Migrated 22 legacy Visualforce pages to LWC, cutting technical debt by 41.3%.",
-      "Built case-handling with Flows and Platform Events, reducing manual effort by 33.7% at 92.4% test coverage.",
-      "Used Gearset, Git, and Salesforce DX to reduce release-related issues by 21.4%.",
+      "Fixed slow Apex and LWC components in a CRM used by 5,000+ users, improving speed by 27.8% and reducing SLA breaches by 19.6%.",
+      "Migrated 22 Visualforce pages to LWC after reviewing support issues; improved page load speed 2.3x and cut technical debt by 41.3%.",
+      "Built Service Cloud case solutions with Apex Triggers, Flows, Platform Events, and Approval Processes, reducing manual effort by 33.7% at 92.4% Apex test coverage.",
+      "Supported CI/CD with Gearset, Git, Jenkins, Salesforce DX, and deployment automation, reducing release-related issues by 21.4%.",
+      "Validated Permission Sets, Sharing Rules, role hierarchy, and FLS before UAT for Sales Cloud and Service Cloud changes, reducing access-related rework during testing.",
     ],
   },
   {
@@ -193,10 +189,11 @@ export const experience = [
     accent: "text-brand-400",
     glow: "from-brand-500/25",
     highlights: [
-      "Built custom CRM workflows for 3,180+ users using Apex, LWC, and Aura, achieving 26.7% process efficiency gain.",
-      "Integrated payment gateways, ERP, and marketing platforms via REST APIs.",
-      "Optimized updates with batch and scheduled Apex, reducing manual follow-up by 17.8%.",
-      "Automated operations with Flows and Process Builder, cutting manual data errors by 18.9%.",
+      "Built CRM workflows for 3,180 users using Apex, LWC, Aura, and Validation Rules, improving process efficiency by 26.7%.",
+      "Integrated Salesforce with payment, ERP, and marketing systems via REST APIs, Named Credentials, and OAuth; supported External Services and Salesforce Connect.",
+      "Reduced reconciliation time from 3.1 hours to 2.6 hours by improving external data flow and API checks.",
+      "Moved delayed CRM updates into Apex Batch and Scheduler jobs, reducing manual follow-up by 17.8%.",
+      "Supported data cleanup with Data Loader, ETL checks, SOQL, and SOSL; manual data errors fell by 18.9% while SLA compliance rose by 14.2%.",
     ],
   },
 ];
@@ -204,66 +201,80 @@ export const experience = [
 export const projectsSection = {
   title: "Featured work",
   description:
-    "Agentforce and AI on Salesforce with measurable impact on support and knowledge workflows.",
+    "Case automation, Service Cloud consoles, release stability, and Agentforce triage with measurable outcomes.",
 };
 
 export const projects = [
   {
-    id: "case-triage",
-    title: "AI-Driven Case Triage & Resolution System",
-    period: "Sep 2025 to Jan 2026",
+    id: "crm-case-automation",
+    title: "CRM Case Automation & Release Stability",
+    period: "Enterprise delivery",
     featured: true,
     accent: "text-brand-400",
     glow: "from-brand-500/30",
     tech: [
-      "Agentforce",
       "Apex",
       "LWC",
       "Flows",
-      "Data Cloud",
-      "Einstein Trust Layer",
+      "Platform Events",
+      "Permission Sets",
       "REST APIs",
+      "Salesforce DX",
+      "Git",
+      "Jenkins",
     ],
     metrics: [
-      { label: "AHT reduction", value: "24.6%" },
-      { label: "Manual sorting", value: "Reduced" },
+      { label: "Manual case review", value: "−29.4%" },
+      { label: "Release rework", value: "−18%" },
     ],
     description:
-      "Agentforce system that classifies cases by intent and urgency, integrates Data Cloud context via REST APIs, and surfaces recommendations in a custom LWC with Einstein Trust Layer masking sensitive data.",
+      "Built a case triage flow using LWC, Apex, SOQL, Flows, Platform Events, and Permission Sets, reducing manual case review steps by 29.4% in test scenarios. Connected an external status service through REST APIs and added validation checks before Salesforce DX, Git, and Jenkins deployments, cutting release rework by 18%.",
   },
   {
-    id: "support-agent",
-    title: "Customer Support Autonomous Agent",
-    period: "Feb 2025 to Sep 2025",
+    id: "service-case-console",
+    title: "Service Case Automation and Support Console",
+    period: "Service Cloud",
+    featured: false,
+    accent: "text-cyan-400",
+    glow: "from-cyan-500/25",
+    tech: [
+      "Apex",
+      "LWC",
+      "Flows",
+      "Platform Events",
+      "REST APIs",
+      "Named Credentials",
+      "Batch Apex",
+      "Queueable Apex",
+    ],
+    metrics: [
+      { label: "Manual case review", value: "−31.2%" },
+      { label: "Overdue follow-up", value: "−22.8%" },
+    ],
+    description:
+      "Built a Service Cloud case console with LWC, Apex, SOQL, Flows, Apex Triggers, and Test Classes, reducing manual case review by 31.2% in test scenarios. Added SLA routing, REST status lookup, and integration logs with Custom Metadata, Platform Events, Batch and Queueable Apex, Named Credentials, OAuth, Data Loader, and ETL checks, cutting overdue case follow-up time by 22.8%.",
+  },
+  {
+    id: "case-triage",
+    title: "AI-Driven Case Triage & Resolution System",
+    period: "Agentforce",
     featured: false,
     accent: "text-violet-400",
     glow: "from-violet-500/25",
     tech: [
       "Agentforce",
       "Prompt Builder",
+      "Generative AI",
+      "RAG",
       "Data Cloud",
       "Einstein Trust Layer",
-      "RAG",
+      "Apex",
+      "LWC",
       "REST APIs",
     ],
-    metrics: [
-      { label: "Auto-resolution", value: "63.9%" },
-      { label: "Faster first response", value: "17.2%" },
-    ],
+    metrics: [{ label: "Average handling time", value: "−24.6%" }],
     description:
-      "Autonomous support agent using Agentforce and Prompt Builder, grounded in Data Cloud and connected knowledge via RAG, with Trust Layer controls for secure output handling.",
-  },
-  {
-    id: "knowledge-bot",
-    title: "Intelligent Knowledge Retrieval Bot",
-    period: "Jul 2024 to Nov 2024",
-    featured: false,
-    accent: "text-cyan-400",
-    glow: "from-cyan-500/25",
-    tech: ["Agentforce", "Generative AI", "RAG", "NLP"],
-    metrics: [{ label: "Answer accuracy", value: "96%" }],
-    description:
-      "Knowledge retrieval bot inside Salesforce that uses NLP and RAG to pull relevant context before generating grounded responses across scattered articles and internal content.",
+      "Built an Agentforce case triage system with Prompt Builder, Generative AI, RAG, Apex, LWC, and Flows, with Einstein Trust Layer controls for sensitive data. Pulled CRM context from Data Cloud through REST APIs and surfaced case recommendations in a custom LWC, cutting average handling time by 24.6%.",
   },
 ];
 
@@ -282,6 +293,19 @@ export const certifications = [
     ],
   },
   {
+    id: "platform-administrator",
+    name: "Salesforce Certified Administrator",
+    shortName: "Administrator",
+    issuer: "Salesforce",
+    date: "Jun 2025",
+    credentialImage: "/certifications/platform-administrator.png",
+    learned: [
+      "Org setup, users, profiles, permission sets, and role hierarchies for secure access.",
+      "Standard and custom objects, page layouts, and productivity features for end users.",
+      "Data management, imports, and core automation from an administrator's perspective.",
+    ],
+  },
+  {
     id: "platform-app-builder",
     name: "Salesforce Certified Platform App Builder",
     shortName: "Platform App Builder",
@@ -295,21 +319,8 @@ export const certifications = [
     ],
   },
   {
-    id: "platform-administrator",
-    name: "Salesforce Certified Platform Administrator",
-    shortName: "Platform Administrator",
-    issuer: "Salesforce",
-    date: "Jun 2025",
-    credentialImage: "/certifications/platform-administrator.png",
-    learned: [
-      "Org setup, users, profiles, permission sets, and role hierarchies for secure access.",
-      "Standard and custom objects, page layouts, and productivity features for end users.",
-      "Data management, imports, and core automation from an administrator's perspective.",
-    ],
-  },
-  {
     id: "agentforce-specialist",
-    name: "Agentforce Specialist",
+    name: "Salesforce Certified Agentforce Specialist",
     shortName: "Agentforce Specialist",
     issuer: "Salesforce",
     date: "2025",
@@ -362,7 +373,7 @@ export const education = [
     highlights: [
       "Core CS: algorithms, OS, databases, and software engineering",
       "Programming fundamentals that underpin Apex and LWC today",
-      "First-class degree with strong analytical and problem-solving focus",
+      "Strong analytical and problem-solving focus",
     ],
   },
 ];

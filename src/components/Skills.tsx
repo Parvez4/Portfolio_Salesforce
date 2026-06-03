@@ -24,6 +24,12 @@ const categoryMeta: Record<
     glow: "from-amber-500/20",
     span: "sm:col-span-2 lg:col-span-2",
   },
+  "Salesforce Clouds": {
+    icon: Cloud,
+    accent: "text-sky-400",
+    glow: "from-sky-500/20",
+    span: "sm:col-span-2",
+  },
   "AI & Data Cloud": {
     icon: Sparkles,
     accent: "text-violet-400",

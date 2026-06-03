@@ -23,7 +23,7 @@ const stats: {
   glow: string;
 }[] = [
   {
-    value: "4+",
+    value: "3+",
     label: "Years Salesforce",
     tag: "Experience",
     icon: Cloud,
@@ -31,7 +31,7 @@ const stats: {
     glow: "from-brand-500/30",
   },
   {
-    value: "50K+",
+    value: "5K+",
     label: "CRM users supported",
     tag: "Scale",
     icon: Users,
